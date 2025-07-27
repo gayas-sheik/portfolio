@@ -1,0 +1,114 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: hsla(240, 1%, 17%, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--jet);
+  border-radius: 12px 12px 0 0;
+  box-shadow: var(--shadow-2);
+  z-index: 5;
+}
+
+.navbar-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar-link {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  padding: 20px 7px;
+  transition: color var(--transition-1);
+}
+
+.navbar-link:hover,
+.navbar-link:focus { 
+  color: var(--light-gray-70); 
+}
+
+.navbar-link.active { 
+  color: var(--orange-yellow-crayola); 
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 480px) {
+  .navbar {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .navbar-link {
+    font-size: var(--fs-8);
+    padding: 15px 5px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navbar { 
+    border-radius: 15px 15px 0 0; 
+  }
+  
+  .navbar-list { 
+    gap: 15px; 
+  }
+  
+  .navbar-link { 
+    font-size: 13px;
+    padding: 18px 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar { 
+    border-radius: 20px 20px 0 0; 
+  }
+  
+  .navbar-list { 
+    gap: 20px; 
+  }
+  
+  .navbar-link { 
+    font-size: 14px; 
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: max-content;
+    border-radius: 0 20px;
+    padding: 0 20px;
+    box-shadow: none;
+  }
+  
+  .navbar-list {
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .navbar-link { 
+    font-weight: var(--fw-500); 
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-width: 1024px) {
+  .navbar {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .navbar-list {
+    justify-content: space-around;
+  }
+}
